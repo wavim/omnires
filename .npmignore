@@ -1,7 +1,7 @@
 .gitattributes
 .prettierrc
 .vscode
-dist/types
+dist/source
 media
 rollup.config.js
 src
