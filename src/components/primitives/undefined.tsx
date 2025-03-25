@@ -1,6 +1,4 @@
-import { Ocomponent } from "../core";
-
-import { O } from "../core";
+import { O, Ocomponent } from "../core";
 
 export const Oundefined: Ocomponent<undefined> = () => (
 	<O color="oklch(0.708 0 0)">undefined</O>

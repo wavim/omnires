@@ -1,6 +1,4 @@
-import { Ocomponent } from "../core";
-
-import { O } from "../core";
+import { O, Ocomponent } from "../core";
 
 export const Ostring: Ocomponent<string> = ({ value }) => {
 	let quote: "'" | '"' | "`" = "'";

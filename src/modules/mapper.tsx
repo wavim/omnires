@@ -1,3 +1,6 @@
+import { JSXElement } from "solid-js";
+import { Dynamic } from "solid-js/web";
+
 import { Ocomponent } from "../components/core";
 
 import { Onull } from "../components/primitives/null";
@@ -8,33 +11,53 @@ import { Obigint } from "../components/primitives/bigint";
 import { Ostring } from "../components/primitives/string";
 import { Osymbol } from "../components/primitives/symbol";
 
-export function map<T>(value: T): Ocomponent<T> {
-	if (value === null) return Onull as Ocomponent<T>;
+//MO REFACTOR circular, use registries later
+import { Oobject } from "../components/derived/object";
 
+export function map<T>(value: T): JSXElement {
+	if (value === null) return <Onull value={value as null}></Onull>;
+
+	let component!: Ocomponent<T>;
 	switch (typeof value) {
 		case "undefined": {
-			return Oundefined as Ocomponent<T>;
+			component = Oundefined as Ocomponent<T>;
+			break;
 		}
 		case "boolean": {
-			return Oboolean as Ocomponent<T>;
+			component = Oboolean as Ocomponent<T>;
+			break;
 		}
 		case "number": {
-			return Onumber as Ocomponent<T>;
+			component = Onumber as Ocomponent<T>;
+			break;
 		}
 		case "bigint": {
-			return Obigint as Ocomponent<T>;
+			component = Obigint as Ocomponent<T>;
+			break;
 		}
 		case "string": {
-			return Ostring as Ocomponent<T>;
+			component = Ostring as Ocomponent<T>;
+			break;
 		}
 		case "symbol": {
-			return Osymbol as Ocomponent<T>;
+			component = Osymbol as Ocomponent<T>;
+			break;
 		}
 		//MO TODO
-		case "object":
+		case "object": {
+			component = Oobject as Ocomponent<T>;
+			break;
+		}
 		case "function":
 		default: {
-			return () => <></>;
+			component = () => <></>;
+			break;
 		}
 	}
+	return (
+		<Dynamic
+			component={component}
+			value={value}
+		></Dynamic>
+	);
 }
