@@ -2,6 +2,8 @@ import { render as mount } from "solid-js/web";
 
 import { map } from "./mapper";
 
+import "../registry/register";
+
 export class Omnires {
 	//MO TODO options
 	constructor() {}

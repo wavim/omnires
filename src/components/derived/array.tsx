@@ -7,10 +7,10 @@ import { map } from "../../modules/mapper";
 
 const MAX_ABBREV_CNT = 4;
 
-export const Oobject: Ocomponent<object> = ({ value }) => {
-	const length = Object.keys(value).length;
+export const Oarray: Ocomponent<Array<any>> = ({ value }) => {
+	const length = value.length;
 
-	const [collapse, setCollapse] = createSignal(length > MAX_ABBREV_CNT);
+	const [collapse, setCollapse] = createSignal(true);
 
 	return (
 		<O color="oklch(0.269 0 0)">
@@ -36,12 +36,11 @@ export const Oobject: Ocomponent<object> = ({ value }) => {
 				</O>
 			</button>
 			<Show when={collapse()}>
-				{"{"}
-				<For each={Object.entries(value).slice(0, MAX_ABBREV_CNT)}>
-					{([key, value], index) => (
+				{"["}
+				<For each={value.slice(0, MAX_ABBREV_CNT)}>
+					{(value, index) => (
 						<>
 							<span>
-								<O color="oklch(0.444 0.177 26.899)">{key}</O>:
 								{typeof value === "object" ? "<Object>" : String(value)}
 							</span>
 							<Show when={index() !== length - 1}>,</Show>
@@ -49,29 +48,29 @@ export const Oobject: Ocomponent<object> = ({ value }) => {
 					)}
 				</For>
 				<Show when={length > MAX_ABBREV_CNT}>...</Show>
-				{"}"}
+				{"]"}
 			</Show>
 			<Show when={!collapse()}>
-				{"{"}
+				{"["}
 				<Show when={length !== 0}>
 					<br></br>
 				</Show>
-				<For each={Object.entries(value)}>
-					{([key, value], index) => (
+				<For each={value}>
+					{(value, index) => (
 						<>
 							<span
 								class={css`
 									padding-left: 1em;
 								`}
 							>
-								<O color="oklch(0.444 0.177 26.899)">{key}</O>: {map(value)}
+								<O color="oklch(0.444 0.177 26.899)">{index}</O>: {map(value)}
 							</span>
 							<Show when={index() !== length - 1}>,</Show>
 							<br></br>
 						</>
 					)}
 				</For>
-				{"}"}
+				{"]"}
 			</Show>
 		</O>
 	);

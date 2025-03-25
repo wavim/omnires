@@ -11,8 +11,7 @@ import { Obigint } from "../components/primitives/bigint";
 import { Ostring } from "../components/primitives/string";
 import { Osymbol } from "../components/primitives/symbol";
 
-//MO REFACTOR circular, use registries later
-import { Oobject } from "../components/derived/object";
+import { getDerived } from "../registry/registry";
 
 export function map<T>(value: T): JSXElement {
 	if (value === null) return <Onull value={value as null}></Onull>;
@@ -43,12 +42,13 @@ export function map<T>(value: T): JSXElement {
 			component = Osymbol as Ocomponent<T>;
 			break;
 		}
-		//MO TODO
 		case "object": {
-			component = Oobject as Ocomponent<T>;
-			break;
+			return getDerived(value);
 		}
-		case "function":
+		case "function": {
+			//MO TODO add base function component
+			return getDerived(value);
+		}
 		default: {
 			component = () => <></>;
 			break;
