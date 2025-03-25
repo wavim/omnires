@@ -1,3 +1,4 @@
 {
-    "git-branch-master.includeRemotes": true
+	"git-branch-master.includeRemotes": true,
+	"typescript.tsdk": "node_modules\\typescript\\lib"
 }

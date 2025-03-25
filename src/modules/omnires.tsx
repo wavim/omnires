@@ -1,22 +1,30 @@
-import { Dynamic, render as solidRender } from "solid-js/web";
-import { getBase } from "../registry/registry";
+import { Dynamic, render as mount } from "solid-js/web";
 
-import "../registry/register";
+import { map } from "./mapper";
 
 export class Omnires {
+	//MO TODO options
 	constructor() {}
 
 	render<T extends HTMLElement>(value: any, container: T): T {
-		solidRender(
+		mount(
 			() => (
 				<Dynamic
-					component={getBase(typeof value)}
+					component={map(value)}
 					value={value}
-					string={`${value}`}
 				></Dynamic>
 			),
 			container,
 		);
 		return container;
+	}
+
+	/**
+	 * WARNING: Make sure you know what you are doing.
+	 * 
+	 * Sanitize expression if you don't trust user input.
+	 */
+	renderEval<T extends HTMLElement>(expression: string, container: T): T {
+		return this.render(new Function(`return ${expression};`)(), container);
 	}
 }

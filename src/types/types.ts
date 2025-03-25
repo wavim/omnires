@@ -1,20 +1,24 @@
-import { JSXElement } from "solid-js";
+// export type Primitive =
+// 	| null
+// 	| undefined
+// 	| boolean
+// 	| number
+// 	| bigint
+// 	| string
+// 	| symbol;
 
-export type BaseType =
-	| "undefined"
-	| "boolean"
-	| "number"
-	| "bigint"
-	| "string"
-	| "symbol"
-	| "function"
-	| "object";
-
-//MO TODO add support for specific types
-export type OmniresComponent = ({
-	value,
-	string,
-}: {
-	value: BaseType;
-	string: string;
-}) => JSXElement;
+// export type TypeofPrimitive<T extends Primitive> = T extends null
+// 	? "object"
+// 	: T extends undefined
+// 	? "undefined"
+// 	: T extends boolean
+// 	? "boolean"
+// 	: T extends number
+// 	? "number"
+// 	: T extends bigint
+// 	? "bigint"
+// 	: T extends string
+// 	? "string"
+// 	: T extends symbol
+// 	? "symbol"
+// 	: never;

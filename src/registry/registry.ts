@@ -1,14 +1,13 @@
-import { BaseType, OmniresComponent } from "../types/types";
+// import { OmniComponent } from "../types/types";
 
-const BASE_REGISTRY: Map<BaseType, OmniresComponent> = new Map();
+// const DERIVED_REGISTRY: Map<
+// 	object,
+// 	OmniComponent<object>
+// > = new Map();
 
-export function registerBase(
-	type: BaseType,
-	component: OmniresComponent,
-): void {
-	BASE_REGISTRY.set(type, component);
-}
-//MO TODO add fallback
-export function getBase(type: BaseType): OmniresComponent {
-	return BASE_REGISTRY.get(type) ?? (() => 69);
-}
+// export function registerPrimitive<T extends PrimitiveType>(
+// 	type: T,
+// 	component: OmniComponent<Primitive<T>>,
+// ): void {
+// 	DERIVED_REGISTRY.set(type, component);
+// }
