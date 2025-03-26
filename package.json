@@ -18,18 +18,22 @@
 		"dist"
 	],
 	"dependencies": {
-		"gfont-loader": "^1.0.5",
+		"gfont-loader": "^1.0.8",
 		"solid-js": "^1.9.5",
 		"solid-styled-components": "^0.28.5"
 	},
 	"devDependencies": {
 		"@rollup/plugin-terser": "^0.4.4",
 		"rollup": "^4.37.0",
+		"rollup-plugin-minlinecss": "^1.0.3",
 		"rollup-preset-solid": "^3.0.0",
 		"typescript": "^5.8.2"
 	},
 	"scripts": {
 		"build": "rollup -c",
 		"watch": "rollup -c --watch"
+	},
+	"pnpm": {
+		"overrides": {}
 	}
 }

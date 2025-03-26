@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       gfont-loader:
-        specifier: ^1.0.5
-        version: 1.0.5
+        specifier: ^1.0.8
+        version: 1.0.8
       solid-js:
         specifier: ^1.9.5
         version: 1.9.5
@@ -24,6 +24,9 @@ importers:
       rollup:
         specifier: ^4.37.0
         version: 4.37.0
+      rollup-plugin-minlinecss:
+        specifier: ^1.0.3
+        version: 1.0.3(rollup@4.37.0)
       rollup-preset-solid:
         specifier: ^3.0.0
         version: 3.0.0
@@ -761,6 +764,10 @@ packages:
   caniuse-lite@1.0.30001707:
     resolution: {integrity: sha512-3qtRjw/HQSMlDWf+X79N206fepf4SOOU6SQLMaq/0KkZLmSjPxAkBOQQ+FxbHKfHmYLZFfdWsO3KA90ceHPSnw==}
 
+  clean-css@5.3.3:
+    resolution: {integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg==}
+    engines: {node: '>= 10.0'}
+
   colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
 
@@ -789,8 +796,8 @@ packages:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
 
-  electron-to-chromium@1.5.123:
-    resolution: {integrity: sha512-refir3NlutEZqlKaBLK0tzlVLe5P2wDKS7UQt/3SpibizgsRAPOsqQC3ffw1nlv3ze5gjRQZYHoPymgVZkplFA==}
+  electron-to-chromium@1.5.124:
+    resolution: {integrity: sha512-riELkpDUqBi00gqreV3RIGoowxGrfueEKBd6zPdOk/I8lvuFpBGNkYoHof3zUHbiTBsIU8oxdIIL/WNrAG1/7A==}
 
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
@@ -819,8 +826,8 @@ packages:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
 
-  gfont-loader@1.0.5:
-    resolution: {integrity: sha512-NA8pqqPt3SqmceMTBciK5DA2IjxDQhAWlUoNAK7j8SA8rcf/J6d4pln1xjawOzYVSqJ8ECtE26JMLBJ7pRwNsA==}
+  gfont-loader@1.0.8:
+    resolution: {integrity: sha512-XSj9NZKxjaJjQ8jNFDe4nDP3Of4ny6+nMyl5qECnJZnuw6+hmgoZRboyvOVtv287Sll/V3muqFmY0TXANnwPvA==}
 
   globals@11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
@@ -872,6 +879,9 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  magic-string@0.30.17:
+    resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
   merge-anything@6.0.6:
     resolution: {integrity: sha512-F3K1W45PvTjRZzbcYIhXntNr8cux00gUxR8IzNPPG+80gNlAHZGVBwFyN4x5yjw/7QkLPKDbRQBK4KrJKo69mw==}
@@ -927,6 +937,11 @@ packages:
     resolution: {integrity: sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==}
     engines: {node: '>= 0.4'}
     hasBin: true
+
+  rollup-plugin-minlinecss@1.0.3:
+    resolution: {integrity: sha512-CfVdYgdsAlJu2URxPoztnvhCoAGZTjqXSo5IUICjrB5QJAOT0MxETTViHRVHyjQpUdHPp8BQMr/BxYTIGF+STw==}
+    peerDependencies:
+      rollup: ^4.0.0
 
   rollup-preset-solid@3.0.0:
     resolution: {integrity: sha512-+LxZ9k+OzG8ufWZUaH9wagokAn4YgW0jWM76Cnq09Mej1eP/sTi1FzVt1WeaCDonyaOPRczop3LyZ4Rpzp+C9w==}
@@ -1866,13 +1881,17 @@ snapshots:
   browserslist@4.24.4:
     dependencies:
       caniuse-lite: 1.0.30001707
-      electron-to-chromium: 1.5.123
+      electron-to-chromium: 1.5.124
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
 
   buffer-from@1.1.2: {}
 
   caniuse-lite@1.0.30001707: {}
+
+  clean-css@5.3.3:
+    dependencies:
+      source-map: 0.6.1
 
   colorette@2.0.20: {}
 
@@ -1892,7 +1911,7 @@ snapshots:
 
   deepmerge@4.3.1: {}
 
-  electron-to-chromium@1.5.123: {}
+  electron-to-chromium@1.5.124: {}
 
   entities@4.5.0: {}
 
@@ -1909,7 +1928,7 @@ snapshots:
 
   gensync@1.0.0-beta.2: {}
 
-  gfont-loader@1.0.5: {}
+  gfont-loader@1.0.8: {}
 
   globals@11.12.0: {}
 
@@ -1944,6 +1963,10 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  magic-string@0.30.17:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.0
 
   merge-anything@6.0.6:
     dependencies:
@@ -1999,6 +2022,12 @@ snapshots:
       is-core-module: 2.16.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+
+  rollup-plugin-minlinecss@1.0.3(rollup@4.37.0):
+    dependencies:
+      clean-css: 5.3.3
+      magic-string: 0.30.17
+      rollup: 4.37.0
 
   rollup-preset-solid@3.0.0:
     dependencies:

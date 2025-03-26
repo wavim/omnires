@@ -16,21 +16,21 @@ export const Oobject: Ocomponent<object> = ({ value }) => {
 		<O color="oklch(0.269 0 0)">
 			<button
 				onclick={() => setCollapse((collapse) => !collapse)}
-				class={css`
+				class={css`##
 					all: initial;
 					transform: translateY(-0.18em);
-				`}
+				##`}
 			>
 				<O
 					color="oklch(0.872 0.01 258.338)"
-					class={css`
+					class={css`##
 						cursor: pointer;
 						scale: 0.7;
 						transition: color 0.2s ease-out;
 						&:hover {
 							color: oklch(0.707 0.022 261.325);
 						}
-					`}
+					##`}
 				>
 					{"\u25b6"}
 				</O>
@@ -60,9 +60,9 @@ export const Oobject: Ocomponent<object> = ({ value }) => {
 					{([key, value], index) => (
 						<>
 							<span
-								class={css`
+								class={css`##
 									padding-left: 1em;
-								`}
+								##`}
 							>
 								<O color="oklch(0.444 0.177 26.899)">{key}</O>: {map(value)}
 							</span>
