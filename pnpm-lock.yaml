@@ -25,8 +25,8 @@ importers:
         specifier: ^4.37.0
         version: 4.37.0
       rollup-plugin-minlinecss:
-        specifier: ^2.0.4
-        version: 2.0.4(rollup@4.37.0)
+        specifier: ^2.0.5
+        version: 2.0.5(rollup@4.37.0)
       rollup-preset-solid:
         specifier: ^3.0.0
         version: 3.0.0
@@ -1002,8 +1002,8 @@ packages:
     engines: {node: '>= 0.4'}
     hasBin: true
 
-  rollup-plugin-minlinecss@2.0.4:
-    resolution: {integrity: sha512-EYxhl39KoZ1045ESi3KgUOzAiY+JMbFIQHXGDO6/uBAm8hFsZ6kORVH3SBWOf4dHBM3clRO0IwHxaTvLapBSIw==}
+  rollup-plugin-minlinecss@2.0.5:
+    resolution: {integrity: sha512-tHS7zqn94xUbbTtvRNdgozeuF5TxxBqWeWDXC1cO/gHBSmdEcahoLI9q4kS3/enxQ/Xk9Q+4gvL6/iFKbVO/2A==}
     peerDependencies:
       rollup: ^4.0.0
 
@@ -2130,7 +2130,7 @@ snapshots:
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
-  rollup-plugin-minlinecss@2.0.4(rollup@4.37.0):
+  rollup-plugin-minlinecss@2.0.5(rollup@4.37.0):
     dependencies:
       lightningcss: 1.29.3
       magic-string: 0.30.17

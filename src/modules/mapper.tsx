@@ -3,13 +3,13 @@ import { Dynamic } from "solid-js/web";
 
 import { Ocomponent } from "../components/core";
 
-import { Onull } from "../components/primitives/null";
-import { Oundefined } from "../components/primitives/undefined";
-import { Oboolean } from "../components/primitives/boolean";
-import { Onumber } from "../components/primitives/number";
-import { Obigint } from "../components/primitives/bigint";
-import { Ostring } from "../components/primitives/string";
-import { Osymbol } from "../components/primitives/symbol";
+import { Onull } from "../components/primitive/null";
+import { Oundefined } from "../components/primitive/undefined";
+import { Oboolean } from "../components/primitive/boolean";
+import { Onumber } from "../components/primitive/number";
+import { Obigint } from "../components/primitive/bigint";
+import { Ostring } from "../components/primitive/string";
+import { Osymbol } from "../components/primitive/symbol";
 
 import { getDerived } from "../registry/registry";
 
