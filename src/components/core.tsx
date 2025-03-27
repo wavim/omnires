@@ -8,15 +8,16 @@ export type Ocomponent<T> = Component<{
 
 loadGFont("JetBrains Mono");
 
+const GLOBAL_STYLES = `
+	.omni {
+		display: inline-block;
+		vertical-align: text-top;
+		font-family: "JetBrains Mono";
+	}
+`;
 document.head.insertAdjacentHTML(
 	"beforeend",
-	`<style>${`##
-		.omni {
-			display: inline-block;
-			vertical-align: text-top;
-			font-family: "JetBrains Mono";
-		}
-	##`}</style>`,
+	`<style>${GLOBAL_STYLES}</style>`,
 );
 
 export const O: Component<{
@@ -25,8 +26,8 @@ export const O: Component<{
 	class?: string;
 }> = ({ color, children, class: classes }) => {
 	//MO TODO use color map configurable instead
-	const Colored = styled("div")`##
+	const Colored = styled("div")`
 		color: ${color};
-	##`;
+	`;
 	return <Colored class={`omni ${classes}`}>{children}</Colored>;
 };
