@@ -1,9 +1,8 @@
-<p align="center">
-	<!-- MO TODO dont forget to replace alt -->
-	<img src="https://raw.githubusercontent.com/CarbonicSoda//master/media/icon.png" width="100" alt="Icon">
-</p>
-<h3 align="center"></h3>
-<p align="center"></p>
+<h3 align="center">
+	<img src="https://raw.githubusercontent.com/CarbonicSoda/omnires/master/media/icon.png" width="130" alt="Omnires Icon" /><br />
+	Omnires
+</h3>
+<p align="center">Universal Javascript Object Renderer</p>
 
 ---
 
