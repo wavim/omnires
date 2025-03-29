@@ -2,13 +2,19 @@
 	"name": "omnires",
 	"author": "CarbonicSoda",
 	"version": "0.0.0-private",
-	"description": "",
+	"description": "Universal JavaScript Object Renderer",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/CarbonicSoda/"
+		"url": "https://github.com/CarbonicSoda/omnires"
 	},
-	"keywords": [],
+	"keywords": [
+		"universal",
+		"renderer",
+		"javascript",
+		"object",
+		"types"
+	],
 	"type": "module",
 	"source": "src/index.ts",
 	"main": "dist/cjs/index.js",
@@ -20,23 +26,20 @@
 		"default": "./dist/cjs/index.js"
 	},
 	"dependencies": {
-		"gfont-loader": "^1.0.8",
+		"gfont-loader": "^1.0.9",
 		"solid-js": "^1.9.5",
 		"solid-styled-components": "^0.28.5"
 	},
 	"devDependencies": {
 		"@rollup/plugin-terser": "^0.4.4",
-		"rollup": "^4.37.0",
+		"rollup": "^4.38.0",
 		"rollup-plugin-dts": "^6.2.1",
-		"rollup-plugin-minlinecss": "^2.0.5",
+		"rollup-plugin-minlinecss": "^2.0.9",
 		"rollup-preset-solid": "^3.0.0",
 		"typescript": "^5.8.2"
 	},
 	"scripts": {
 		"build": "rollup -c",
 		"watch": "rollup -c --watch"
-	},
-	"pnpm": {
-		"overrides": {}
 	}
 }

@@ -1,3 +1,3 @@
-export { Omnires } from "./modules/omnires";
+export * from "./modules/omnires";
 
 export { register as registerPlugin } from "./components/derived/registry/registry";
