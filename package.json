@@ -1,8 +1,7 @@
 {
-	"private": true,
 	"name": "omnires",
 	"author": "CarbonicSoda",
-	"version": "0.0.0",
+	"version": "0.0.0-private",
 	"description": "",
 	"license": "MIT",
 	"repository": {
