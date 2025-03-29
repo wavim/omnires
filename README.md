@@ -70,10 +70,9 @@ Returns the `<span>`.
 
 <details>
 <summary><b>Potentially Unsafe Methods</b></summary>
-<br/>
 
 > **WARNING**: Make sure you know what you are doing. Sanitize expression if you
-> don't trust user input.
+> can't trust user input.
 
 **`renderEval<T extends HTMLElement>(expression: string, container: T): T`**
 
@@ -121,6 +120,8 @@ import { OName } from "./name.component";
 
 Omni.register(Name, OName);
 ```
+
+> Details can be found in the JSDocs of `Omni` and it's content.
 
 As simple as that.
 

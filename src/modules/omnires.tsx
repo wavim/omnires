@@ -25,7 +25,7 @@ export function wrap(value: any): HTMLSpanElement {
 
 /**
  * **WARNING**: Make sure you know what you are doing.
- * Sanitize expression if you don't trust user input.
+ * Sanitize expression if you can't trust user input.
  *
  * Mounts rendered `expression` into `container` (either in or out of DOM)
  * after parsing it with JavaScript, e.g. `"[1,2]"` => `[1,2]`.
@@ -41,7 +41,7 @@ export function renderEval<T extends HTMLElement>(
 
 /**
  * **WARNING**: Make sure you know what you are doing.
- * Sanitize expression if you don't trust user input.
+ * Sanitize expression if you can't trust user input.
  *
  * Wraps rendered `expression` into a `<span>` element
  * after parsing it with JavaScript, e.g. `"[1,2]"` => `[1,2]`.
