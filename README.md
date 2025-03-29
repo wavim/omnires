@@ -32,9 +32,16 @@ const result = document.querySelector("#result");
 render([69, { key: "Hello World!" }], result);
 ```
 
-will give:
+will give you...
 
 ![Demo](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo1.png?raw=true)
+
+Cool, isn't it? Not only can Omnires render primitives, it is also fully
+pluggable and supports any type you can find in JS: Dates, Errors, Sets...
+
+![Demo](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo2.png?raw=true)
+
+### Methods
 
 ---
 
