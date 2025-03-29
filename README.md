@@ -43,9 +43,9 @@ any type you can find in JS: Dates, Errors, Sets...
 
 ![Demo](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo2.png?raw=true)
 
-> You can also add support for your custom classes! There will be a good
-> fallback for you if you don't, though. Details on writing plugins can be found
-> in [Plugins](#plugins).
+> You can also add support for your own classes! There will be a good fallback
+> for you if you don't, though. Details on writing plugins can be found in
+> [Plugins](#plugins).
 
 ### Methods
 
@@ -121,13 +121,13 @@ import { OName } from "./name.component";
 Omni.register(Name, OName);
 ```
 
-> Details can be found in the JSDocs of `Omni` and it's content.
+> Details can be found in the JSDocs of `Omni` and its exports.
 
 As simple as that.
 
 ### Customization
 
-To customize the style of Omnires in general e.g. font-size and filters, play
+To customize the styles of Omnires in general e.g. font-size and filters, play
 with the class `.omni` in your CSS.
 
 ---
