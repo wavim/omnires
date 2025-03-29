@@ -16,6 +16,13 @@
 			"problemMatcher": [],
 			"label": "npm: watch",
 			"detail": "rollup -c --watch"
+		},
+		{
+			"type": "npm",
+			"script": "publish",
+			"problemMatcher": [],
+			"label": "npm: publish",
+			"detail": "pnpm publish"
 		}
 	]
 }

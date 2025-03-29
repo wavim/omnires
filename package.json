@@ -1,7 +1,7 @@
 {
 	"name": "omnires",
 	"author": "CarbonicSoda",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Universal JavaScript Object Renderer",
 	"license": "MIT",
 	"repository": {
@@ -40,7 +40,9 @@
 	},
 	"scripts": {
 		"build": "rollup -c",
-		"watch": "rollup -c --watch"
+		"watch": "rollup -c --watch",
+		"prepublish": "rollup -c",
+		"publish": "pnpm publish"
 	},
 	"publishConfig": {
 		"access": "public"
