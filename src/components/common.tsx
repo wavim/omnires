@@ -14,7 +14,6 @@ const GLOBAL_STYLES = `
 		vertical-align: text-top;
 		font-size: 1rem;
 		font-family: "JetBrains Mono";
-		mix-blend-mode: difference;
 	}
 `;
 document.head.insertAdjacentHTML(
