@@ -89,7 +89,7 @@ export const TObjectLike: Component<{
 					</span>
 				)}
 			</For>
-			<Show when={length > props.preview}>"\u2026"</Show>
+			<Show when={length > props.preview}>{"\u2026"}</Show>
 			{props.brackets[1]}
 		</O>
 	);

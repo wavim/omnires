@@ -6,14 +6,10 @@ const DERIVED_REGISTRY: Array<{
 	component: Ocomponent<any>;
 }> = [];
 
-/**
- * Registers a component that will render a specific derived class,
- * you must implement the component in SolidJS.
- *
- * @param derivedClass class constructor, e.g. Date / Error
- * @param component the component that will receive props `{ value: derivedClass }`
- */
-export function register(derivedClass: any, component: Ocomponent<any>): void {
+export function register<T extends abstract new (...args: any) => any>(
+	derivedClass: T,
+	component: Ocomponent<InstanceType<T>>,
+): void {
 	DERIVED_REGISTRY.push({
 		class: derivedClass,
 		component,

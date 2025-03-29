@@ -2,6 +2,7 @@ import { register } from "./registry";
 
 import { OObject } from "../Object";
 import { OArray } from "../Array";
+import { OUintArray } from "../UintArray";
 import { OMap } from "../Map";
 import { OSet } from "../Set";
 
@@ -14,6 +15,9 @@ import { ODate } from "../Date";
 
 register(Object, OObject);
 register(Array, OArray);
+register(Uint8Array, OUintArray);
+register(Uint16Array, OUintArray);
+register(Uint32Array, OUintArray);
 register(Map, OMap);
 register(Set, OSet);
 

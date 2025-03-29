@@ -9,10 +9,14 @@ export const OError: Ocomponent<Error> = (props) => {
 		<>
 			<O color="oklch(0.637 0.237 25.331)">{`${error.name}\u00a0`}</O>
 			<TObjectLike
-				entries={[
-					["message", error.message],
-					["cause", error.cause],
-				]}
+				entries={
+					error.cause
+						? [
+								["message", error.message],
+								["cause", error.cause],
+						  ]
+						: [["message", error.message]]
+				}
 				brackets="{}"
 				preview={2}
 				themeColor="oklch(0.637 0.237 25.331)"
