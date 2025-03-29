@@ -1,6 +1,6 @@
 <h3 align="center">
-	<img src="https://raw.githubusercontent.com/CarbonicSoda/omnires/master/media/icon.png" width="130" alt="Omnires Icon" /><br />
-	Omnires
+  <img src="https://raw.githubusercontent.com/CarbonicSoda/omnires/master/media/icon.png" width="130" alt="Omnires Icon" /><br />
+  Omnires
 </h3>
 <p align="center">Universal JavaScript Object Renderer</p>
 
@@ -21,7 +21,7 @@ pnpm add omnires
 yarn add omnires
 ```
 
-Now, render any objects into your page!
+Now, render ANY object into your page!
 
 ```ts
 // example.ts
@@ -100,7 +100,7 @@ You can register plugins to tell Omnires how to render custom classes:
 ```ts
 // name.ts
 export class Name {
-	constructor(public first: string, public last: string) {}
+  constructor(public first: string, public last: string) {}
 }
 ```
 
@@ -109,7 +109,7 @@ export class Name {
 import { Omni } from "omnires";
 
 export default OName = (props) => (
-	<Omni.O color="black">{`${props.value.first} ${props.value.last}`}</Omni.O>
+  <Omni.O color="black">{`${props.value.first} ${props.value.last}`}</Omni.O>
 );
 ```
 
