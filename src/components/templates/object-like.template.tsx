@@ -40,10 +40,10 @@ export const TObjectLike: Component<{
 			</Show>
 			<Show when={props.isCollection}>{`(${length})`}</Show>
 			{props.brackets[0]}
-			<Show when={!empty && !isPreview()}>
+			<Show when={!isPreview() && !empty}>
 				<br></br>
 			</Show>
-			<For each={entries.slice(0, props.preview)}>
+			<For each={isPreview() ? entries.slice(0, props.preview) : entries}>
 				{([key, value], i) => (
 					<span
 						class={
@@ -54,7 +54,7 @@ export const TObjectLike: Component<{
 								  `
 						}
 					>
-						<Show when={!(props.isCollection && isPreview())}>
+						<Show when={!(isPreview() && props.isCollection)}>
 							<O color={props.previewColor}>
 								<Show
 									when={!isPreview()}
@@ -89,7 +89,7 @@ export const TObjectLike: Component<{
 					</span>
 				)}
 			</For>
-			<Show when={length > props.preview}>{"\u2026"}</Show>
+			<Show when={isPreview() && length > props.preview}>{"\u2026"}</Show>
 			{props.brackets[1]}
 		</O>
 	);
