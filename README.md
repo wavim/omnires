@@ -43,6 +43,8 @@ any type you can find in JS: Dates, Errors, Sets...
 
 ![Demo](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo2.png?raw=true)
 
+> The rendered objects are responsive to background color.
+
 > You can also add support for your own classes! There will be a good fallback
 > for you if you don't, though. Details on writing plugins can be found in
 > [Plugins](#plugins).
@@ -129,6 +131,9 @@ As simple as that.
 
 To customize the styles of Omnires in general e.g. font-size and filters, play
 with the class `.omni` in your CSS.
+
+> Currently, Omnires will not work with ShadowDOMs due to one of the
+> dependencies.
 
 ---
 

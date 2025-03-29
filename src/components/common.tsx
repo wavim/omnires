@@ -12,7 +12,9 @@ const GLOBAL_STYLES = `
 	.omni {
 		display: inline-block;
 		vertical-align: text-top;
+		font-size: 1rem;
 		font-family: "JetBrains Mono";
+		mix-blend-mode: difference;
 	}
 `;
 document.head.insertAdjacentHTML(
