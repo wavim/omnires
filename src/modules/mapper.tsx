@@ -1,17 +1,17 @@
 import { JSXElement } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-import { Ocomponent } from "../components/core";
+import { Ocomponent } from "../components/common";
 
-import { Onull } from "../components/primitive/null";
-import { Oundefined } from "../components/primitive/undefined";
-import { Oboolean } from "../components/primitive/boolean";
-import { Onumber } from "../components/primitive/number";
-import { Obigint } from "../components/primitive/bigint";
-import { Ostring } from "../components/primitive/string";
-import { Osymbol } from "../components/primitive/symbol";
+import { Onull } from "../components/primitives/null";
+import { Oundefined } from "../components/primitives/undefined";
+import { Oboolean } from "../components/primitives/boolean";
+import { Onumber } from "../components/primitives/number";
+import { Obigint } from "../components/primitives/bigint";
+import { Ostring } from "../components/primitives/string";
+import { Osymbol } from "../components/primitives/symbol";
 
-import { getDerived } from "../registry/registry";
+import { getComponent } from "../components/derived/registry/registry";
 
 export function map<T>(value: T): JSXElement {
 	if (value === null) return <Onull value={value as null}></Onull>;
@@ -43,15 +43,10 @@ export function map<T>(value: T): JSXElement {
 			break;
 		}
 		case "object": {
-			return getDerived(value);
+			return getComponent(value);
 		}
 		case "function": {
-			//MO TODO add base function component
-			return getDerived(value);
-		}
-		default: {
-			component = () => <></>;
-			break;
+			return getComponent(value);
 		}
 	}
 	return (

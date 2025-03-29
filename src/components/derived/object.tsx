@@ -1,16 +1,15 @@
-import { Ocomponent } from "../core";
+import { Ocomponent } from "../common";
 
-import { TObjectLike } from "../template/object-like.template";
+import { TObjectLike } from "../templates/object-like.template";
 
-export const Oobject: Ocomponent<object> = ({ value }) => {
+export const OObject: Ocomponent<Object> = (props) => {
 	return (
 		<TObjectLike
-			value={value}
-			bracket="{}"
-			maxPreview={5}
-			entries={Object.entries}
-			primaryColor="oklch(0.869 0.022 252.894)"
-			secondaryColor="oklch(0.129 0.042 264.695)"
+			entries={Object.entries(props.value)}
+			brackets="{}"
+			preview={5}
+			themeColor="oklch(0.828 0.189 84.429)"
+			previewColor="oklch(0.75 0.183 55.934)"
 		></TObjectLike>
 	);
 };

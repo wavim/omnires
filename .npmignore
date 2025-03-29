@@ -2,6 +2,7 @@
 .prettierrc
 .vscode
 dist/source
+dist/types
 media
 rollup.config.js
 src

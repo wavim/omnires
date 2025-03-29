@@ -24,10 +24,17 @@ export const O: Component<{
 	color: string;
 	children: any;
 	class?: string;
-}> = ({ color, children, class: classes }) => {
-	//MO TODO use color map configurable instead
+	style?: string;
+}> = (props) => {
 	const Colored = styled("div")`
-		color: ${color};
+		color: ${props.color};
 	`;
-	return <Colored class={`omni ${classes}`}>{children}</Colored>;
+	return (
+		<Colored
+			class={`omni${props.class ? ` ${props.class}` : ""}`}
+			style={props.style}
+		>
+			{props.children}
+		</Colored>
+	);
 };
