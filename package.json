@@ -1,7 +1,7 @@
 {
 	"name": "omnires",
 	"author": "CarbonicSoda",
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"description": "Universal JavaScript Object Renderer",
 	"license": "MIT",
 	"repository": {
@@ -26,7 +26,7 @@
 		"default": "./dist/cjs/index.js"
 	},
 	"dependencies": {
-		"gfont-loader": "^1.1.0",
+		"gfont-loader": "^1.2.1",
 		"solid-js": "^1.9.5",
 		"solid-styled-components": "^0.28.5"
 	},

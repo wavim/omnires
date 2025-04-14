@@ -1,4 +1,4 @@
-import { loadGFont } from "gfont-loader";
+import { loadGFont, preconnect } from "gfont-loader";
 import { Component } from "solid-js";
 import { styled } from "solid-styled-components";
 
@@ -6,6 +6,7 @@ export type Ocomponent<T> = Component<{
 	value: T;
 }>;
 
+preconnect();
 loadGFont("JetBrains Mono");
 
 const GLOBAL_STYLES = `
