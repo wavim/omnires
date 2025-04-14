@@ -12,6 +12,7 @@ const GLOBAL_STYLES = `
 	.omni {
 		display: inline-block;
 		vertical-align: text-top;
+		
 		font-size: 1rem;
 		font-family: "JetBrains Mono";
 	}

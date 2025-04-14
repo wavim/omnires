@@ -26,9 +26,10 @@ export const TObjectLike: Component<{
 				<span
 					onclick={() => togglePreview((preview) => !preview)}
 					class={css`
-						user-select: none;
 						-webkit-user-select: none;
+						user-select: none;
 						cursor: pointer;
+
 						transition: filter 0.2s ease-out;
 						&:hover {
 							filter: brightness(0.5);
