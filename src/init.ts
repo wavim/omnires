@@ -1,6 +1,6 @@
 import { loadGFont } from "gfont-loader";
 
-export function initStyles(): void {
+export function init(): void {
 	void loadGFont("JetBrains Mono");
 
 	const globalStyles = `

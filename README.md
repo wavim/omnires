@@ -21,7 +21,7 @@ pnpm add omnires
 yarn add omnires
 ```
 
-Now, render ANY object into your page!
+Now, render any object onto your page!
 
 ```ts
 // example.ts
@@ -38,19 +38,13 @@ will give you...
 
 Cool, isn't it?
 
-Not only can Omnires render primitives, it is also fully pluggable and supports
-any type you can find in JS: Dates, Errors, Sets...
+Not only can Omnires render primitives, it also supports essentially any type you can find in JS.
 
 ![Demo](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo2.png?raw=true)
 
-> You can also add support for your own classes! There will be a good fallback
-> for you if you don't, though. Details on writing plugins can be found in
-> [Plugins](#plugins).
-
 ### Methods
 
-> All methods have full JSDocs and TypeScript typing support, so you may skip
-> this section.
+> All methods have full JSDocs and TypeScript support.
 
 **`render<T extends HTMLElement>(value: any, container: T): T`**
 
@@ -71,13 +65,13 @@ Returns the `<span>`.
 <details>
 <summary><b>Potentially Unsafe Methods</b></summary>
 
-> **WARNING**: Make sure you know what you are doing. Sanitize expression if you
-> can't trust user input.
+> **WARNING**: Make sure you know what you are doing. Sanitize expression if you can't trust user
+> input.
 
 **`renderEval<T extends HTMLElement>(expression: string, container: T): T`**
 
-Mounts rendered `expression` into `container` (either in or out of DOM) after
-parsing it with JavaScript, e.g. `"[1,2]"` => `[1,2]`.
+Mounts rendered `expression` into `container` (either in or out of DOM) after parsing it with
+JavaScript, e.g. `"[1,2]"` => `[1,2]`.
 
 Returns `container`.
 
@@ -85,54 +79,17 @@ Returns `container`.
 
 **`wrapEval(expression: string): HTMLSpanElement`**
 
-Wraps rendered `expression` into a `<span>` element after parsing it with
-JavaScript, e.g. `"[1,2]"` => `[1,2]`.
+Wraps rendered `expression` into a `<span>` element after parsing it with JavaScript, e.g. `"[1,2]"`
+=> `[1,2]`.
 
 Returns the `<span>`.
 
 </details>
 
-### Plugins
-
-You can register plugins to tell Omnires how to render custom classes:
-
-```ts
-// name.ts
-export class Name {
-  constructor(public first: string, public last: string) {}
-}
-```
-
-```tsx
-// name.component.tsx
-import { Omni } from "omnires";
-
-export default OName = (props) => (
-  <Omni.O color="black">{`${props.value.first} ${props.value.last}`}</Omni.O>
-);
-```
-
-```ts
-// custom-class-plugin.ts
-import { Omni } from "omnires";
-import { Name } from "./name";
-import { OName } from "./name.component";
-
-Omni.register(Name, OName);
-```
-
-> Details can be found in the JSDocs of `Omni` and its exports.
-
-As simple as that.
-
 ### Customization
 
-To customize the styles of Omnires in general e.g. font-size and filters, play
-with the class `.omni` in your CSS. Another use case is to invert the colors for
-higher contrast in dark mode.
-
-> Currently, Omnires will not work with ShadowDOMs due to one of the
-> dependencies.
+To customize the styles of Omnires in general e.g. font-size, filters, or adding a dark mode: mess
+around with the `.omni` class in CSS.
 
 ---
 
