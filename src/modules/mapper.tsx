@@ -1,57 +1,63 @@
 import { JSXElement } from "solid-js";
 import { Dynamic } from "solid-js/web";
-
-import { Ocomponent } from "../components/common";
-
-import { Onull } from "../components/primitives/null";
-import { Oundefined } from "../components/primitives/undefined";
-import { Oboolean } from "../components/primitives/boolean";
-import { Onumber } from "../components/primitives/number";
+import { Omni } from "../components/common";
+import { query } from "../components/derived/registry/registry";
 import { Obigint } from "../components/primitives/bigint";
+import { Oboolean } from "../components/primitives/boolean";
+import { Onull } from "../components/primitives/null";
+import { Onumber } from "../components/primitives/number";
 import { Ostring } from "../components/primitives/string";
 import { Osymbol } from "../components/primitives/symbol";
+import { Oundefined } from "../components/primitives/undefined";
 
-import { getComponent } from "../components/derived/registry/registry";
+export function map(value: unknown): JSXElement {
+	if (value === null) {
+		return <Onull value={value}></Onull>;
+	}
 
-export function map<T>(value: T): JSXElement {
-	if (value === null) return <Onull value={value as null}></Onull>;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	let omni: Omni<any> | undefined;
 
-	let component!: Ocomponent<T>;
 	switch (typeof value) {
 		case "undefined": {
-			component = Oundefined as Ocomponent<T>;
+			omni = Oundefined;
 			break;
 		}
 		case "boolean": {
-			component = Oboolean as Ocomponent<T>;
+			omni = Oboolean;
 			break;
 		}
 		case "number": {
-			component = Onumber as Ocomponent<T>;
+			omni = Onumber;
 			break;
 		}
 		case "bigint": {
-			component = Obigint as Ocomponent<T>;
+			omni = Obigint;
 			break;
 		}
 		case "string": {
-			component = Ostring as Ocomponent<T>;
+			omni = Ostring;
 			break;
 		}
 		case "symbol": {
-			component = Osymbol as Ocomponent<T>;
+			omni = Osymbol;
 			break;
 		}
 		case "object": {
-			return getComponent(value);
+			return query(value);
 		}
 		case "function": {
-			return getComponent(value);
+			return query(value);
 		}
 	}
+
+	if (!omni) {
+		return <></>;
+	}
+
 	return (
 		<Dynamic
-			component={component}
+			component={omni}
 			value={value}
 		></Dynamic>
 	);

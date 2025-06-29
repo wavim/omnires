@@ -1,29 +1,25 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { JSXElement } from "solid-js";
-import { Ocomponent } from "../../common";
+import { Omni } from "../../common";
 
-const DERIVED_REGISTRY: Array<{
-	class: any;
-	component: Ocomponent<any>;
-}> = [];
+type New<T> = new (...args: any[]) => T;
 
-export function register<T extends abstract new (...args: any) => any>(
-	derivedClass: T,
-	component: Ocomponent<InstanceType<T>>,
-): void {
-	DERIVED_REGISTRY.push({
-		class: derivedClass,
-		component,
-	});
+interface Entry<T> {
+	construct: New<T>;
+	component: Omni<T>;
 }
 
-export function getComponent(value: any): JSXElement {
-	for (let i = DERIVED_REGISTRY.length; i > 0; i--) {
-		const registered = DERIVED_REGISTRY[i - 1];
+const registry: Entry<any>[] = [];
 
-		if (!(value instanceof registered.class)) continue;
+export function register(construct: New<any>, component: Omni<any>): void {
+	registry.push({ construct, component });
+}
 
-		const Component = registered.component;
-		return <Component value={value}></Component>;
+export function query(value: object): JSXElement {
+	for (const { construct, component: Omni } of registry.toReversed()) {
+		if (value instanceof construct) {
+			return <Omni value={value}></Omni>;
+		}
 	}
-	return <></>;
 }

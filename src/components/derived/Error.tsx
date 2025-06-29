@@ -1,27 +1,26 @@
-import { O, Ocomponent } from "../common";
+import { O, Omni } from "../common";
+import { ObjectLike } from "../templates/object-like.template";
 
-import { TObjectLike } from "../templates/object-like.template";
-
-export const OError: Ocomponent<Error> = (props) => {
+export const OError: Omni<Error> = (props) => {
 	const error = props.value;
 
 	return (
-		<>
-			<O color="oklch(0.637 0.237 25.331)">{`${error.name}\u00a0`}</O>
-			<TObjectLike
+		<O color="oklch(0.637 0.237 25.331)">
+			{`${error.name}\u00a0`}
+			<ObjectLike
 				entries={
 					error.cause
 						? [
 								["message", error.message],
 								["cause", error.cause],
-						  ]
+							]
 						: [["message", error.message]]
 				}
-				brackets="{}"
 				preview={2}
+				bracket="{}"
 				themeColor="oklch(0.637 0.237 25.331)"
 				previewColor="oklch(0.704 0.191 22.216)"
-			></TObjectLike>
-		</>
+			></ObjectLike>
+		</O>
 	);
 };

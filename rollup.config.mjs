@@ -1,0 +1,19 @@
+import terserPlugin from "@rollup/plugin-terser";
+import dtsPlugin from "rollup-plugin-dts";
+import minlinecssPlugin from "rollup-plugin-minlinecss";
+import withSolid from "rollup-preset-solid";
+
+export default [
+	withSolid({
+		targets: ["esm", "cjs"],
+
+		plugins: [minlinecssPlugin(), terserPlugin()],
+	}),
+	{
+		input: "dist/types/index.d.ts",
+		output: [{ file: "dist/index.d.ts", format: "es" }],
+
+		plugins: [dtsPlugin()],
+		watch: true,
+	},
+];

@@ -1,6 +1,6 @@
-import { O, Ocomponent } from "../common";
+import { O, Omni } from "../common";
 
-export const Ostring: Ocomponent<string> = (props) => {
+export const Ostring: Omni<string> = (props) => {
 	let string = props.value;
 
 	let quote: "'" | '"' | "`" = "'";

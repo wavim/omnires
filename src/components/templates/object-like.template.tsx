@@ -1,30 +1,30 @@
 import { Component, createSignal, For, Show } from "solid-js";
 import { css } from "solid-styled-components";
-
-import { O } from "../common";
-
 import { map } from "../../modules/mapper";
 import { getPreview } from "../../utils/get-preview";
+import { O } from "../common";
 
-export const TObjectLike: Component<{
-	entries: Iterable<[any, any]>;
-	brackets: string;
+export const ObjectLike: Component<{
+	entries: Iterable<[unknown, unknown]>;
 	preview: number;
+
+	bracket: string;
 	themeColor: string;
 	previewColor: string;
-	isCollection?: boolean;
+
+	collection?: boolean;
 }> = (props) => {
 	const entries = Array.from(props.entries);
 	const length = entries.length;
 	const empty = length === 0;
 
-	const [isPreview, togglePreview] = createSignal(true);
+	const [isPreview, setPreview] = createSignal(true);
 
 	return (
 		<O color={props.themeColor}>
 			<Show when={!empty}>
 				<span
-					onclick={() => togglePreview((preview) => !preview)}
+					onclick={() => setPreview((preview) => !preview)}
 					class={css`
 						-webkit-user-select: none;
 						user-select: none;
@@ -39,23 +39,27 @@ export const TObjectLike: Component<{
 					{"\u25b6"}
 				</span>
 			</Show>
-			<Show when={props.isCollection}>{`(${length})`}</Show>
-			{props.brackets[0]}
+
+			<Show when={props.collection}>{`(${length.toFixed()})`}</Show>
+
+			{props.bracket[0]}
+
 			<Show when={!isPreview() && !empty}>
 				<br></br>
 			</Show>
+
 			<For each={isPreview() ? entries.slice(0, props.preview) : entries}>
 				{([key, value], i) => (
 					<span
 						class={
 							isPreview()
-								? void 0
+								? undefined
 								: css`
 										padding-left: 1em;
-								  `
+									`
 						}
 					>
-						<Show when={!(isPreview() && props.isCollection)}>
+						<Show when={!(isPreview() && props.collection)}>
 							<O color={props.previewColor}>
 								<Show
 									when={!isPreview()}
@@ -66,14 +70,15 @@ export const TObjectLike: Component<{
 							</O>
 							:
 						</Show>
+
 						<O
 							color={props.previewColor}
 							class={
 								isPreview()
-									? void 0
+									? undefined
 									: css`
 											padding-left: 0.5em;
-									  `
+										`
 							}
 						>
 							<Show
@@ -83,15 +88,21 @@ export const TObjectLike: Component<{
 								{map(value)}
 							</Show>
 						</O>
-						<Show when={isPreview() && i() < length - 1}>, </Show>
+
+						<Show when={isPreview() && i() < length - 1}>
+							{", "}
+						</Show>
+
 						<Show when={!isPreview()}>
 							<br></br>
 						</Show>
 					</span>
 				)}
 			</For>
+
 			<Show when={isPreview() && length > props.preview}>{"\u2026"}</Show>
-			{props.brackets[1]}
+
+			{props.bracket[1]}
 		</O>
 	);
 };
