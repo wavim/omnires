@@ -6,9 +6,10 @@ export const OMap: Omni<Map<unknown, unknown>> = (props) => {
 		<ObjectLike
 			entries={props.value.entries()}
 			preview={5}
-			bracket="<>"
-			themeColor="oklch(0.707 0.165 254.624)"
-			previewColor="oklch(0.424 0.199 265.638)"
+			paren="<>"
+			arrow="=>"
+			pColor="oklch(0.707 0.165 254.624)"
+			sColor="oklch(0.424 0.199 265.638)"
 		></ObjectLike>
 	);
 };

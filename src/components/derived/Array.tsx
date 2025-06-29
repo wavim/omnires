@@ -6,10 +6,10 @@ export const OArray: Omni<unknown[]> = (props) => {
 		<ObjectLike
 			entries={props.value.entries()}
 			preview={5}
-			bracket="[]"
-			themeColor="oklch(0.702 0.183 293.541)"
-			previewColor="oklch(0.381 0.176 304.987)"
-			collection
+			paren="[]"
+			pColor="oklch(0.702 0.183 293.541)"
+			sColor="oklch(0.381 0.176 304.987)"
+			list
 		></ObjectLike>
 	);
 };

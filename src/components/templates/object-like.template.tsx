@@ -1,28 +1,29 @@
 import { Component, createSignal, For, Show } from "solid-js";
 import { css } from "solid-styled-components";
 import { map } from "../../modules/mapper";
-import { getPreview } from "../../utils/get-preview";
+import { preview } from "../../utils/preview";
 import { O } from "../common";
 
 export const ObjectLike: Component<{
 	entries: Iterable<[unknown, unknown]>;
 	preview: number;
 
-	bracket: string;
-	themeColor: string;
-	previewColor: string;
+	paren?: string;
+	arrow?: string;
+	pColor: string;
+	sColor: string;
 
-	collection?: boolean;
+	list?: boolean;
 }> = (props) => {
 	const entries = Array.from(props.entries);
 	const length = entries.length;
-	const empty = length === 0;
+	const isEmpty = length === 0;
 
 	const [isPreview, setPreview] = createSignal(true);
 
 	return (
-		<O color={props.themeColor}>
-			<Show when={!empty}>
+		<O color={props.pColor}>
+			<Show when={!isEmpty}>
 				<span
 					onclick={() => setPreview((preview) => !preview)}
 					class={css`
@@ -40,69 +41,94 @@ export const ObjectLike: Component<{
 				</span>
 			</Show>
 
-			<Show when={props.collection}>{`(${length.toFixed()})`}</Show>
+			<Show when={props.list}>{`(${length.toFixed()})`}</Show>
 
-			{props.bracket[0]}
+			{props.paren?.[0] ?? "{"}
 
-			<Show when={!isPreview() && !empty}>
+			{/* check what is this for */}
+			<Show when={!isPreview() && !isEmpty}>
 				<br></br>
 			</Show>
 
 			<For each={isPreview() ? entries.slice(0, props.preview) : entries}>
-				{([key, value], i) => (
-					<span
-						class={
-							isPreview()
-								? undefined
-								: css`
-										padding-left: 1em;
-									`
-						}
-					>
-						<Show when={!(isPreview() && props.collection)}>
-							<O color={props.previewColor}>
-								<Show
-									when={!isPreview()}
-									fallback={getPreview(key)}
-								>
-									{map(key)}
-								</Show>
-							</O>
-							:
-						</Show>
-
-						<O
-							color={props.previewColor}
-							class={
-								isPreview()
-									? undefined
-									: css`
-											padding-left: 0.5em;
-										`
-							}
-						>
-							<Show
-								when={!isPreview()}
-								fallback={getPreview(value)}
-							>
-								{map(value)}
-							</Show>
-						</O>
-
-						<Show when={isPreview() && i() < length - 1}>
-							{", "}
-						</Show>
-
-						<Show when={!isPreview()}>
-							<br></br>
-						</Show>
-					</span>
+				{(item, i) => (
+					<Pair
+						i={i()}
+						entry={item}
+						arrow={props.arrow}
+						isList={props.list}
+						isLast={i() === length - 1}
+						isPreview={isPreview()}
+						sColor={props.sColor}
+					></Pair>
 				)}
 			</For>
 
 			<Show when={isPreview() && length > props.preview}>{"\u2026"}</Show>
 
-			{props.bracket[1]}
+			{props.paren?.[1] ?? "}"}
 		</O>
+	);
+};
+
+const Pair: Component<{
+	i: number;
+	entry: [unknown, unknown];
+
+	arrow?: string;
+	isList?: boolean;
+	isLast: boolean;
+
+	isPreview: boolean;
+	sColor: string;
+}> = (props) => {
+	const [key, value] = props.entry;
+
+	return (
+		<span
+			class={
+				props.isPreview
+					? undefined
+					: css`
+							padding-left: 1em;
+						`
+			}
+		>
+			<Show when={!props.isPreview || !props.isList}>
+				<O color={props.sColor}>
+					<Show
+						when={props.isPreview}
+						fallback={map(key)}
+					>
+						{preview(key)}
+					</Show>
+				</O>
+				{props.arrow ?? ":"}
+			</Show>
+
+			<O
+				color={props.sColor}
+				class={
+					props.isPreview
+						? undefined
+						: css`
+								padding-left: 0.5em;
+							`
+				}
+			>
+				<Show
+					when={props.isPreview}
+					fallback={map(value)}
+				>
+					{preview(value)}
+				</Show>
+			</O>
+
+			<Show when={props.isPreview && !props.isLast}>{", "}</Show>
+
+			<Show when={!props.isPreview}>
+				<br></br>
+			</Show>
+		</span>
 	);
 };

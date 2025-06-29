@@ -17,9 +17,9 @@ export const OError: Omni<Error> = (props) => {
 						: [["message", error.message]]
 				}
 				preview={2}
-				bracket="{}"
-				themeColor="oklch(0.637 0.237 25.331)"
-				previewColor="oklch(0.704 0.191 22.216)"
+				paren="{}"
+				pColor="oklch(0.637 0.237 25.331)"
+				sColor="oklch(0.704 0.191 22.216)"
 			></ObjectLike>
 		</O>
 	);
