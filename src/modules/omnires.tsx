@@ -1,16 +1,14 @@
 import { render as mount } from "solid-js/web";
-
 import { map } from "./mapper";
-
-import "../components/derived/registry/register";
 
 /**
  * Mounts rendered `value` into `container` (either in or out of DOM).
  *
  * @returns `container`
  */
-export function render<T extends HTMLElement>(value: any, container: T): T {
+export function render<T extends HTMLElement>(value: unknown, container: T): T {
 	mount(() => map(value), container);
+
 	return container;
 }
 
@@ -19,7 +17,7 @@ export function render<T extends HTMLElement>(value: any, container: T): T {
  *
  * @returns the `<span>`
  */
-export function wrap(value: any): HTMLSpanElement {
+export function wrap(value: unknown): HTMLSpanElement {
 	return render(value, document.createElement("span"));
 }
 
@@ -32,10 +30,8 @@ export function wrap(value: any): HTMLSpanElement {
  *
  * @returns `container`
  */
-export function renderEval<T extends HTMLElement>(
-	expression: string,
-	container: T,
-): T {
+export function renderEval<T extends HTMLElement>(expression: string, container: T): T {
+	// eslint-disable-next-line @typescript-eslint/no-implied-eval, @typescript-eslint/no-unsafe-call
 	return render(new Function(`return ${expression};`)(), container);
 }
 

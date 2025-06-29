@@ -1,16 +1,15 @@
-import { Ocomponent } from "../common";
+import { Omni } from "../common";
+import { ObjectLike } from "../templates/object-like.template";
 
-import { TObjectLike } from "../templates/object-like.template";
-
-export const OArray: Ocomponent<Array<any>> = (props) => {
+export const OArray: Omni<unknown[]> = (props) => {
 	return (
-		<TObjectLike
+		<ObjectLike
 			entries={props.value.entries()}
-			brackets="[]"
 			preview={5}
+			bracket="[]"
 			themeColor="oklch(0.702 0.183 293.541)"
 			previewColor="oklch(0.381 0.176 304.987)"
-			isCollection
-		></TObjectLike>
+			collection
+		></ObjectLike>
 	);
 };
