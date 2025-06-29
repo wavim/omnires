@@ -1,7 +1,7 @@
 {
 	"name": "omnires",
 	"author": "CarbonicSoda",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "Universal JavaScript Object Renderer",
 	"license": "MIT",
 	"repository": {
@@ -39,7 +39,6 @@
 		"prettier": "^3.6.2",
 		"rollup": "^4.44.1",
 		"rollup-plugin-dts": "^6.2.1",
-		"rollup-plugin-minlinecss": "^2.0.9",
 		"rollup-preset-solid": "^3.0.0",
 		"typescript": "^5.8.3",
 		"typescript-eslint": "^8.35.0"
