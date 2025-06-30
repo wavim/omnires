@@ -1,5 +1,5 @@
 import { render as mount } from "solid-js/web";
-import { map } from "./mapper";
+import { map } from "./map";
 
 /**
  * Mounts rendered `value` into `container` (either in or out of DOM).

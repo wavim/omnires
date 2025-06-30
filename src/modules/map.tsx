@@ -43,10 +43,10 @@ export function map(value: unknown): JSXElement {
 			omni = Osymbol;
 			break;
 		}
-		case "object": {
+		case "function": {
 			return query(value);
 		}
-		case "function": {
+		case "object": {
 			return query(value);
 		}
 	}

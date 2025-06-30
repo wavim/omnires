@@ -1,5 +1,6 @@
 import { OArray } from "../Array";
 import { ODate } from "../Date";
+import { OElement } from "../Element";
 import { OError } from "../Error";
 import { OFunction } from "../Function";
 import { OMap } from "../Map";
@@ -25,4 +26,6 @@ export function registerAll(): void {
 	register(Date, ODate);
 	register(Map, OMap);
 	register(Set, OSet);
+
+	register(Element, OElement);
 }

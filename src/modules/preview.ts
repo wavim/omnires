@@ -8,17 +8,17 @@ export function preview(value: any): string {
 		case "undefined": {
 			return "undefined";
 		}
-		case "number": {
-			return value.toFixed(2);
-		}
-		case "string": {
-			return value;
-		}
 		case "boolean": {
 			return String(value);
 		}
+		case "number": {
+			return Number.isInteger(value) ? String(value) : value.toFixed(2);
+		}
 		case "bigint": {
 			return `${String(value)}n`;
+		}
+		case "string": {
+			return value;
 		}
 		case "symbol": {
 			return String(value);

@@ -1,7 +1,7 @@
 import { Component, createSignal, For, Show } from "solid-js";
 import { css } from "solid-styled-components";
-import { map } from "../../modules/mapper";
-import { preview } from "../../utils/preview";
+import { map } from "../../modules/map";
+import { preview } from "../../modules/preview";
 import { O } from "../common";
 
 export const ObjectLike: Component<{
