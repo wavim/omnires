@@ -34,13 +34,13 @@ render([69, { key: "Hello World!" }], result);
 
 will give you...
 
-![Demo](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo1.png?raw=true)
+![Demo1](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo1.png?raw=true)
 
 Cool, isn't it?
 
 Not only can Omnires render primitives, it also supports essentially any type you can find in JS.
 
-![Demo](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo2.png?raw=true)
+![Demo2](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo2.png?raw=true)
 
 ### Methods
 

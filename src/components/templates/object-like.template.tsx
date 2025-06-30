@@ -41,11 +41,10 @@ export const ObjectLike: Component<{
 				</span>
 			</Show>
 
-			<Show when={props.list}>{`(${length.toFixed()})`}</Show>
+			{`(${length.toFixed()})`}
 
 			{props.paren?.[0] ?? "{"}
 
-			{/* check what is this for */}
 			<Show when={!isPreview() && !isEmpty}>
 				<br></br>
 			</Show>
@@ -53,7 +52,6 @@ export const ObjectLike: Component<{
 			<For each={isPreview() ? entries.slice(0, props.preview) : entries}>
 				{(item, i) => (
 					<Pair
-						i={i()}
 						entry={item}
 						arrow={props.arrow}
 						isList={props.list}
@@ -72,7 +70,6 @@ export const ObjectLike: Component<{
 };
 
 const Pair: Component<{
-	i: number;
 	entry: [unknown, unknown];
 
 	arrow?: string;
