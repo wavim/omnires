@@ -1,23 +1,42 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function preview(value: any): string {
-	const type = typeof value;
-
-	if (value === null || value === undefined) {
-		return String(value);
+	if (value === null) {
+		return "null";
 	}
 
-	if (type === "object" || type === "function" || type === "symbol") {
-		const name = (value as object).constructor.name;
-
-		if (!("size" in value) && !("length" in value)) {
-			return name;
+	switch (typeof value) {
+		case "undefined": {
+			return "undefined";
 		}
+		case "number": {
+			return value.toFixed(2);
+		}
+		case "string": {
+			return value;
+		}
+		case "boolean": {
+			return String(value);
+		}
+		case "bigint": {
+			return `${String(value)}n`;
+		}
+		case "symbol": {
+			return String(value);
+		}
+		case "function": {
+			return "Function";
+		}
+		case "object": {
+			const name = (value as object).constructor.name;
 
-		return `${name}(${("size" in value
-			? (value as { size: number }).size
-			: (value as { length: number }).length
-		).toFixed()})`;
+			if (!("size" in value) && !("length" in value)) {
+				return name;
+			}
+
+			return `${name}(${("size" in value
+				? (value as { size: number }).size
+				: (value as { length: number }).length
+			).toFixed()})`;
+		}
 	}
-
-	return String(value);
 }
