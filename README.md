@@ -29,7 +29,7 @@ import { render } from "omnires";
 
 const result = document.querySelector("#result");
 
-render([69, { key: "Hello World!" }], result);
+render([69, true, { foo: "Hello World!" }], result);
 ```
 
 will give you...
