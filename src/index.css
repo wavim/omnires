@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+div.omni,
+div.omni div {
+	display: inline-block;
+	vertical-align: text-top;
+
+	font:
+		1rem "JetBrains Mono",
+		monospace;
+}

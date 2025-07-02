@@ -21,7 +21,7 @@ pnpm add omnires
 yarn add omnires
 ```
 
-Now, render any object onto your page!
+Now you could render any object onto your page!
 
 ```ts
 // example.ts
@@ -38,27 +38,25 @@ will give you...
 
 Cool, isn't it?
 
-Not only can Omnires render primitives, it also supports essentially any type you can find in JS.
+Not only could Omnires render primitives, it also supports essentially all types in JS.
 
 ![Demo2](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo2.png?raw=true)
 
 ### Methods
 
-> All methods have full JSDocs and TypeScript support.
+**`render<T extends HTMLElement>(value: unknown, container: T): T`**
 
-**`render<T extends HTMLElement>(value: any, container: T): T`**
-
-Mounts rendered `value` into `container` (either in or out of DOM).
+Mounts rendered `value` into `container`.
 
 Returns `container`.
 
 ---
 
-**`wrap(value: any): HTMLSpanElement`**
+**`wrap<T extends keyof HTMLElementTagNameMap>(tag: T, value: unknown): HTMLElementTagNameMap[T]`**
 
-Wraps rendered `value` into a `<span>` element.
+Wraps rendered `value` into a `tag` element.
 
-Returns the `<span>`.
+Returns the `tag` element.
 
 ---
 
@@ -70,26 +68,23 @@ Returns the `<span>`.
 
 **`renderEval<T extends HTMLElement>(expression: string, container: T): T`**
 
-Mounts rendered `expression` into `container` (either in or out of DOM) after parsing it with
-JavaScript, e.g. `"[1,2]"` => `[1,2]`.
+Mounts rendered `expression` into `container` after parsing it with JavaScript.
 
 Returns `container`.
 
 ---
 
-**`wrapEval(expression: string): HTMLSpanElement`**
+**`wrapEval<T extends keyof HTMLElementTagNameMap>(tag: T, expression: string): HTMLElementTagNameMap[T]`**
 
-Wraps rendered `expression` into a `<span>` element after parsing it with JavaScript, e.g. `"[1,2]"`
-=> `[1,2]`.
+Wraps rendered `expression` into a `tag` element after parsing it with JavaScript.
 
-Returns the `<span>`.
+Returns the `tag` element.
 
 </details>
 
 ### Customization
 
-To customize the styles of Omnires in general e.g. font-size, filters, or adding a dark mode: mess
-around with the `.omni` class in CSS.
+To customize Omnires e.g. alter font-size: mess around with the `.omni` class in CSS.
 
 ---
 
