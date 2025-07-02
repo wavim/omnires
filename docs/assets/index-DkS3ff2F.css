@@ -1,0 +1,1 @@
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem}@media screen and (width >= 48rem){body{flex-direction:row}}h1{font:2rem JetBrains Mono,monospace}#input,#result{width:20rem;height:20rem;padding:1rem;border:2px solid}#input{resize:none;outline:none;font:1rem JetBrains Mono,monospace}
