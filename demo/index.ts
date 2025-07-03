@@ -9,7 +9,7 @@ input.addEventListener("keydown", (ev) => {
 	if (ev.key === "Tab") {
 		ev.preventDefault();
 		input.setRangeText(
-			"  ",
+			" ",
 			input.selectionStart as number,
 			input.selectionEnd as number,
 			"end",
@@ -30,8 +30,5 @@ input.addEventListener("input", () => {
 	}
 });
 
-input.value = `{
-  foo: "Hello World",
-  bar: [1, 2, 3, 69],
-}`;
+input.value = "Date()";
 renderEval(input.value, result);
