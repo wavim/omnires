@@ -1,6 +1,7 @@
 import { createSignal, For, Show } from "solid-js";
 import { elementify } from "../mapper/elementify";
 import { stringify } from "../mapper/stringify";
+import { Omni } from "../omni";
 import { Generic, OmniGeneric } from "../types/generic";
 import { Oklch } from "../types/oklch";
 
@@ -20,16 +21,13 @@ export function listlike<T extends Generic>(
 		const [view, setView] = createSignal(false);
 
 		return (
-			<div
-				class="omnires"
-				style={{ color: color1 }}
-			>
-				<div
-					style={{ "cursor": "pointer", "user-select": "none" }}
+			<Omni style={{ color: color1 }}>
+				<Omni
 					onclick={() => setView(!view())}
+					style={{ "cursor": "pointer", "user-select": "none" }}
 				>
 					{"\u25b6"}
-				</div>
+				</Omni>
 				{`(${String(list.length)})`}
 
 				{brace[0]}
@@ -42,7 +40,7 @@ export function listlike<T extends Generic>(
 						return (
 							<span>
 								<Show when={view() || keyed}>
-									<div
+									<Omni
 										style={{
 											"color": color2,
 											"margin-left":
@@ -58,8 +56,9 @@ export function listlike<T extends Generic>(
 											: stringify(
 													k,
 												)}
-									</div>
-									<div
+									</Omni>
+
+									<Omni
 										style={{
 											"margin-inline":
 												view()
@@ -68,14 +67,14 @@ export function listlike<T extends Generic>(
 										}}
 									>
 										{arrow}
-									</div>
+									</Omni>
 								</Show>
 
-								<div style={{ color: color2 }}>
+								<Omni style={{ color: color2 }}>
 									{view()
 										? elementify(v)
 										: stringify(v)}
-								</div>
+								</Omni>
 
 								<Show
 									when={
@@ -95,7 +94,7 @@ export function listlike<T extends Generic>(
 
 				<Show when={!view() && list.length > 5}>{"\u2026"}</Show>
 				{brace[1]}
-			</div>
+			</Omni>
 		);
 	};
 }
