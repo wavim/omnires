@@ -1,10 +1,12 @@
-.vscode/
 .husky/
+.vscode/
+demo/
+dist/source/
+dist/types/
+docs/
 media/
 src/
 test/
-dist/source/
-dist/types/
 
 .prettierrc
 rollup.config.mjs
