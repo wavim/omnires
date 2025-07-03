@@ -4,7 +4,7 @@ import { Oklch } from "../types/oklch";
 export const Colored: Component<{ color: Oklch; children: JSXElement }> = (props) => {
 	return (
 		<div
-			class="omni"
+			class="omnires"
 			style={{ color: props.color }}
 		>
 			{props.children}

@@ -1,3 +1,3 @@
 import { primitive } from "../primitive";
 
-export const OmniString = primitive<string>("oklch(55.4% 0.135 66.442)");
+export const OmniString = primitive<string>("oklch(64.8% 0.2 131.684)");

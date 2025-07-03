@@ -21,7 +21,7 @@ export function listlike<T extends Generic>(
 
 		return (
 			<div
-				class="omni"
+				class="omnires"
 				style={{ color: color1 }}
 			>
 				<div

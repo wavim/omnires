@@ -21,7 +21,7 @@ pnpm add omnires
 yarn add omnires
 ```
 
-Now you could render any object onto your page!
+Now you could render any object onto your page.
 
 ```ts
 // example.ts
@@ -32,7 +32,7 @@ const result = document.querySelector("#result");
 render([69, true, { foo: "Hello World!" }], result);
 ```
 
-will give you...
+would give you...
 
 ![Demo1](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo1.png?raw=true)
 
@@ -82,9 +82,9 @@ Returns the `tag` element.
 
 </details>
 
-### Customization
+### Demo
 
-To customize Omnires e.g. alter font-size: mess around with the `.omni` class in CSS.
+A demo of Omnires is available at [Omnires Demo](https://carbonicsoda.github.io/omnires/).
 
 ---
 
