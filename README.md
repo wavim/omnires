@@ -84,7 +84,7 @@ Returns the `tag` element.
 
 ### Demo
 
-A demo of Omnires is available at [Omnires Demo](https://carbonicsoda.github.io/omnires/).
+A demo of Omnires is available at [Omnires Demo](https://wavim.github.io/omnires/).
 
 ---
 
