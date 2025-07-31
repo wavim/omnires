@@ -1,5 +1,5 @@
 <h3 align="center">
-  <img src="https://raw.githubusercontent.com/CarbonicSoda/omnires/master/media/icon.png" width="130" alt="Omnires Icon" /><br />
+  <img src="https://raw.githubusercontent.com/wavim/omnires/master/media/icon.png" width="130" alt="Omnires Icon" /><br />
   Omnires
 </h3>
 <p align="center">Universal JavaScript Object Renderer</p>
@@ -34,13 +34,13 @@ render([69, true, { foo: "Hello World!" }], result);
 
 would give you...
 
-![Demo1](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo1.png?raw=true)
+![Demo1](https://github.com/wavim/omnires/blob/master/media/demo/demo1.png?raw=true)
 
 Cool, isn't it?
 
 Not only could Omnires render primitives, it also supports essentially all types in JS.
 
-![Demo2](https://github.com/CarbonicSoda/omnires/blob/master/media/demo/demo2.png?raw=true)
+![Demo2](https://github.com/wavim/omnires/blob/master/media/demo/demo2.png?raw=true)
 
 ### Methods
 
