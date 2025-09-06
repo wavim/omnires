@@ -1,5 +1,5 @@
 onlyBuiltDependencies:
-  - esbuild
+        - esbuild
 
 overrides:
-  omnires: link:..
+        omnires: link:..
